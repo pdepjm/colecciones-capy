@@ -86,20 +86,16 @@ program ejemplo {
   )
   keyboard.t().onPressDo(
         { 
-        const planta = interactuador.obtenerPrimerElemento("t"," sobre un elemento para tratarlo")
+        const planta = interactuador.obtenerPrimerElemento("t"," sobre una planta para tratarla")
         capy.tratar(planta)
-        game.schedule(2000,{ 
-                  game.say(capy, "Aprieta P para saber el impacto en la huella de carbono de la basura que recolectaste")
 
-        })
         }
       )
   keyboard.h().onPressDo(
     {
-      game.schedule(2000,{ 
-      game.say(capy,"Tu huella de carbono es: "+ capy.impactoEnLaHuellaDeCarbono() )
-        })
-        }
+      game.say(capy,"Tu huella de carbono es: "+ capy.impactoEnLaHuellaDeCarbono()) 
+        
+    }
   )
   keyboard.s().onPressDo(
     {
@@ -114,5 +110,8 @@ program ejemplo {
 		if (colliders.isEmpty()) 
 			throw new DomainException(message = "Apreta "+ key + accion, source = capy)
     return colliders.head()
+    }
+    method validarElemento(){
+      
     }
   }
