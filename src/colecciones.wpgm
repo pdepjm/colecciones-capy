@@ -2,13 +2,7 @@ import wollok.game.*
 
 object capy {
   var property position = game.origin()
-  var property basuraRecolectada = null
-  
   method image() = "capy_tranqui.png"
-  
-  method impactoEnLaHuellaDeCarbono() = basuraRecolectada.impactoEnLaHuellaDeCarbono()
-  
-  method tratar(planta) = planta.tratar(basuraRecolectada)
 }
 
 object posicionAleatoria {
@@ -20,41 +14,19 @@ object posicionAleatoria {
 
 object lataDeCerveza {
   var property position = posicionAleatoria.calcular()
-  var property longitudCm = 10
-  
-  method impactoEnLaHuellaDeCarbono() = 5 * longitudCm
   
   method image() = "lata_roja.png"
-  
-  method esReciclable() = true
-  
-  method tratar() {
-    longitudCm *= 0.9
-  }
+
 }
 
 object botellaDeGaseosa {
-  var impactoEnHuellaDeCarbono = 100
   var property position = posicionAleatoria.calcular()
-  
-  method impactoEnLaHuellaDeCarbono() = impactoEnHuellaDeCarbono
-  
   method image() = "lata_naranja.png"
-  
-  method esReciclable() = true
-  
-  method tratar() {
-    impactoEnHuellaDeCarbono -= 5
-  }
+
 }
 
 object barrilDeCombustible {
   var property position = posicionAleatoria.calcular()
-  
-  method impactoEnLaHuellaDeCarbono() = biogas.consumo()
-  
-  method esReciclable() = false
-  
   method image() = "residuos-toxicos.png"
 }
 
@@ -63,9 +35,6 @@ object plantaDeTratamiento {
   
   method image() = "planta.png"
   
-  method tratar(basura) {
-    basura.tratar()
-  }
 }
 
 object petroleo {
@@ -102,7 +71,6 @@ program ejemplo {
     { 
 
       const nuevaBasuraRecolectada = interactuador.obtenerPrimerElemento("r"," sobre un elemento para recolectarlo")
-      capy.basuraRecolectada(nuevaBasuraRecolectada)
       game.removeVisual(nuevaBasuraRecolectada)
     
     }
@@ -121,7 +89,6 @@ program ejemplo {
     {
       game.schedule(2000,{ 
       game.say(capy,"Tu huella de carbono es: "+ capy.impactoEnLaHuellaDeCarbono() )
-
         })
         }
   )

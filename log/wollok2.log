@@ -1119,3 +1119,26 @@
 {"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":330,"timestamp":"2024-09-12T06:24:00.161Z"}
 {"exitCode":"SIGINT","level":"info","message":"👾 Game executed src.colecciones.ejemplo on c:\\Users\\facun\\OneDrive\\Escritorio\\colecciones-capy","timeElapsed":414584,"timestamp":"2024-09-12T06:24:04.701Z"}
 {"exitCode":"SIGHUP","level":"info","message":"👾 Game executed src.colecciones.ejemplo on c:\\Users\\facun\\OneDrive\\Escritorio\\colecciones-capy","timeElapsed":68444,"timestamp":"2024-09-12T06:25:22.693Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":259,"timestamp":"2024-09-12T12:21:53.630Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/facun/OneDrive/Escritorio/colecciones-capy","timestamp":"2024-09-12T12:21:53.641Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":199,"timestamp":"2024-09-12T12:21:53.842Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":123,"timestamp":"2024-09-12T12:21:54.067Z"}
+{"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":259,"timestamp":"2024-09-12T12:21:54.338Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":183,"timestamp":"2024-09-12T12:21:54.522Z"}
+{"level":"info","message":"⌛ Validating testExample.wtest","timeElapsed":270,"timestamp":"2024-09-12T12:21:54.847Z"}
+{"level":"info","message":"⌛ Validating src/combustible.wlk","timeElapsed":233,"timestamp":"2024-09-12T12:21:55.081Z"}
+{"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":270,"timestamp":"2024-09-12T12:21:55.354Z"}
+{"level":"info","message":"⌛ Validating testExample.wtest","timeElapsed":132,"timestamp":"2024-09-12T12:21:55.495Z"}
+{"level":"info","message":"⌛ Validating src/combustible.wlk","timeElapsed":116,"timestamp":"2024-09-12T12:21:55.612Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":453,"timestamp":"2024-09-12T12:47:44.753Z"}
+{"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":213,"timestamp":"2024-09-12T12:47:44.987Z"}
+{"exitCode":{"address":"::","code":"EADDRINUSE","errno":-4091,"port":3000,"syscall":"listen"},"level":"info","message":"👾 Game executed src.colecciones.ejemplo on c:\\Users\\facun\\OneDrive\\Escritorio\\colecciones-capy","timeElapsed":956,"timestamp":"2024-09-12T12:48:32.279Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":362,"timestamp":"2024-09-12T12:50:00.222Z"}
+{"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":329,"timestamp":"2024-09-12T12:50:00.610Z"}
+{"level":"info","message":"onRequest - completionItem/resolve","timestamp":"2024-09-12T12:50:00.615Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":396,"timestamp":"2024-09-12T12:50:02.473Z"}
+{"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":357,"timestamp":"2024-09-12T12:50:02.850Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":187,"timestamp":"2024-09-12T12:50:15.773Z"}
+{"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":227,"timestamp":"2024-09-12T12:50:16.002Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed src.colecciones.ejemplo on c:\\Users\\facun\\OneDrive\\Escritorio\\colecciones-capy","timeElapsed":1929705,"timestamp":"2024-09-12T12:54:45.317Z"}
+{"exitCode":"SIGINT","level":"info","message":"👾 Game executed src.colecciones.ejemplo on c:\\Users\\facun\\OneDrive\\Escritorio\\colecciones-capy","timeElapsed":295315,"timestamp":"2024-09-12T12:59:41.004Z"}
