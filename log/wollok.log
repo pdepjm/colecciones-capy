@@ -1,0 +1,9 @@
+{"level":"info","message":"⌛ Building environment","timeElapsed":224,"timestamp":"2024-09-12T01:58:43.081Z"}
+{"level":"info","message":"onRequest - WORKSPACE_URI:file:///c%3A/Users/facun/OneDrive/Escritorio/colecciones-capy","timestamp":"2024-09-12T01:58:43.092Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":201,"timestamp":"2024-09-12T01:58:43.295Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":112,"timestamp":"2024-09-12T01:58:43.411Z"}
+{"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":220,"timestamp":"2024-09-12T01:58:43.638Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":200,"timestamp":"2024-09-12T01:58:43.839Z"}
+{"level":"info","message":"⌛ Validating testExample.wtest","timeElapsed":170,"timestamp":"2024-09-12T01:58:44.020Z"}
+{"level":"info","message":"⌛ Validating src/colecciones.wpgm","timeElapsed":196,"timestamp":"2024-09-12T01:58:44.218Z"}
+{"level":"info","message":"⌛ Validating testExample.wtest","timeElapsed":105,"timestamp":"2024-09-12T01:58:44.323Z"}

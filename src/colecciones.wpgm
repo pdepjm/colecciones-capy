@@ -1,0 +1,70 @@
+
+import wollok.game.*
+
+object capy {
+  var property position = game.origin()
+  var basuraReciclada = []
+  method image() = "capypng-removebg-preview.png"
+  method latasAReciclar() = basuraReciclada
+  method huellaDeCarbonReducida(){
+  }
+}
+object posicionAleatoria {
+  method calcular()= game.at(0.randomUpTo(game.width()).truncate(0),0.randomUpTo(game.width()).truncate(0))
+}
+object ganaste {
+  var property position = game.origin()
+
+  method image() = "ganastes.png"
+}
+object botellaDeGaseosa {
+  var property position = posicionAleatoria.calcular()
+  method huellaDeCarbono() = 20
+  method image() = "lata_roja.png"
+  method esReciclable() = true
+}
+object lataCerveza {
+  method huellaDeCarbono() = 60
+  var property position = posicionAleatoria.calcular()
+  method image() = "lata_naranja.png"
+  method esReciclable() = true
+
+}
+object barrilDePetroleo{
+  method huellaDeCarbono() = 12000
+  var property position = posicionAleatoria.calcular()
+  method esReciclable() = false
+  method image() = "residuos-toxicos.png"
+
+}
+
+
+
+program ejemplo {
+  game.boardGround("humedal.png")
+  game.width(10)
+  game.height(10)
+  game.addVisual(botellaDeGaseosa)
+  game.addVisual(lataCerveza)
+  game.addVisual(barrilDePetroleo)
+
+  game.addVisualCharacter(capy)
+  keyboard.space().onPressDo { 
+    const colliders = game.colliders(capy)
+    if (colliders.isEmpty()) 
+      throw new DomainException(message = "No hay nada aquí", source = capy)
+    colliders.head().interactua(capy)
+   
+    game.removeVisual(colliders.head())
+    game.schedule(1000, { game.say(capy,"cantidad de latas restantes: "+ capy.latasAReciclar())})
+}
+ game.onTick(5000, "end", {
+
+  if(capy.latasAReciclar()==0){
+    game.allVisuals().forEach({ visual => game.removeVisual(visual) })
+    game.addVisual(ganaste)
+    game.removeTickEvent("end")
+  }
+ })
+  game.start()
+}
