@@ -1,70 +1,137 @@
-
 import wollok.game.*
 
 object capy {
   var property position = game.origin()
-  var basuraReciclada = []
-  method image() = "capypng-removebg-preview.png"
-  method latasAReciclar() = basuraReciclada
-  method huellaDeCarbonReducida(){
+  var property basuraRecolectada = null
+  
+  method image() = "capy_tranqui.png"
+  
+  method impactoEnLaHuellaDeCarbono() = basuraRecolectada.impactoEnLaHuellaDeCarbono()
+  
+  method tratar(planta) = planta.tratar(basuraRecolectada)
+}
+
+object posicionAleatoria {
+  method calcular() = game.at(
+    0.randomUpTo(game.width()).truncate(0),
+    0.randomUpTo(game.width()).truncate(0)
+  )
+}
+
+object lataDeCerveza {
+  var property position = posicionAleatoria.calcular()
+  var property longitudCm = 10
+  
+  method impactoEnLaHuellaDeCarbono() = 5 * longitudCm
+  
+  method image() = "lata_roja.png"
+  
+  method esReciclable() = true
+  
+  method tratar() {
+    longitudCm *= 0.9
   }
 }
-object posicionAleatoria {
-  method calcular()= game.at(0.randomUpTo(game.width()).truncate(0),0.randomUpTo(game.width()).truncate(0))
-}
-object ganaste {
-  var property position = game.origin()
 
-  method image() = "ganastes.png"
-}
 object botellaDeGaseosa {
+  var impactoEnHuellaDeCarbono = 100
   var property position = posicionAleatoria.calcular()
-  method huellaDeCarbono() = 20
-  method image() = "lata_roja.png"
-  method esReciclable() = true
-}
-object lataCerveza {
-  method huellaDeCarbono() = 60
-  var property position = posicionAleatoria.calcular()
+  
+  method impactoEnLaHuellaDeCarbono() = impactoEnHuellaDeCarbono
+  
   method image() = "lata_naranja.png"
+  
   method esReciclable() = true
-
+  
+  method tratar() {
+    impactoEnHuellaDeCarbono -= 5
+  }
 }
-object barrilDePetroleo{
-  method huellaDeCarbono() = 12000
+
+object barrilDeCombustible {
   var property position = posicionAleatoria.calcular()
+  
+  method impactoEnLaHuellaDeCarbono() = biogas.consumo()
+  
   method esReciclable() = false
+  
   method image() = "residuos-toxicos.png"
-
 }
 
+object plantaDeTratamiento {
+  var property position = game.at(8, 8)
+  
+  method image() = "planta.png"
+  
+  method tratar(basura) {
+    basura.tratar()
+  }
+}
 
+object petroleo {
+  method consumo() = 1200
+}
+
+object biogas {
+  /* el biogas es el resultado de la degradación
+  de materia degradable, así que en si es una forma de reciclar */
+  method consumo() = 0
+}
+
+object gasoil {
+  var pureza = 0.4
+  
+  method pureza(porentaje) {
+    pureza = porentaje
+  }
+  
+  method consumo() = 500 * pureza
+}
 
 program ejemplo {
   game.boardGround("humedal.png")
   game.width(10)
   game.height(10)
   game.addVisual(botellaDeGaseosa)
-  game.addVisual(lataCerveza)
-  game.addVisual(barrilDePetroleo)
-
+  game.addVisual(lataDeCerveza)
+  game.addVisual(barrilDeCombustible)
+  game.addVisual(plantaDeTratamiento)
   game.addVisualCharacter(capy)
-  keyboard.space().onPressDo { 
-    const colliders = game.colliders(capy)
-    if (colliders.isEmpty()) 
-      throw new DomainException(message = "No hay nada aquí", source = capy)
-    colliders.head().interactua(capy)
-   
-    game.removeVisual(colliders.head())
-    game.schedule(1000, { game.say(capy,"cantidad de latas restantes: "+ capy.latasAReciclar())})
-}
- game.onTick(5000, "end", {
+  
+  keyboard.r().onPressDo(
+    { 
 
-  if(capy.latasAReciclar()==0){
-    game.allVisuals().forEach({ visual => game.removeVisual(visual) })
-    game.addVisual(ganaste)
-    game.removeTickEvent("end")
-  }
- })
+      const nuevaBasuraRecolectada = interactuador.obtenerPrimerElemento("r"," sobre un elemento para recolectarlo")
+      capy.basuraRecolectada(nuevaBasuraRecolectada)
+      game.removeVisual(nuevaBasuraRecolectada)
+    
+    }
+  )
+  keyboard.t().onPressDo(
+        { 
+        const planta = interactuador.obtenerPrimerElemento("t"," sobre un elemento para tratarlo")
+        capy.tratar(planta)
+        game.schedule(2000,{ 
+                  game.say(capy, "Aprieta P para saber el impacto en la huella de carbono de la basura que recolectaste")
+
+        })
+        }
+      )
+  keyboard.h().onPressDo(
+    {
+      game.schedule(2000,{ 
+      game.say(capy,"Tu huella de carbono es: "+ capy.impactoEnLaHuellaDeCarbono() )
+
+        })
+        }
+  )
   game.start()
 }
+  object interactuador{
+    method obtenerPrimerElemento(key,accion){
+      		const colliders = game.colliders(capy)
+		if (colliders.isEmpty()) 
+			throw new DomainException(message = "Apreta "+ key + accion, source = capy)
+    return colliders.head()
+    }
+  }
