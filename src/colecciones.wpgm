@@ -16,7 +16,7 @@ object lataDeCerveza {
     longitud = longitud * 0.9
   }
   method image() = "lata_roja.png"
-
+  method esReciclable()= true
 }
 const botellaDeGaseosa2 = object{
 
@@ -29,6 +29,8 @@ object botellaDeGaseosa {
   method tratate(){
     huella = huella - 5
   }
+  method esReciclable()= true
+
 
 }
 
@@ -38,6 +40,8 @@ object barrilDeCombustible {
   method tratate(){
     //No hace nada
   }
+  method esReciclable()= false
+
 }
 
 object plantaDeTratamiento {
@@ -76,7 +80,7 @@ program ejemplo {
   game.addVisual(barrilDeCombustible)
   game.addVisual(plantaDeTratamiento)
   game.addVisualCharacter(capy)
-  
+
   keyboard.r().onPressDo(
     { 
 
@@ -102,6 +106,14 @@ program ejemplo {
       capy.soltar()
     }
   )
+  keyboard.e().onPressDo(
+    {
+      capy.deciTuCantidadDeBasura()
+    }
+  )
+  keyboard.c().onPressDo({
+    capy.deciCuantosSonReciclables()
+  })
   game.start()
 }
   object interactuador{

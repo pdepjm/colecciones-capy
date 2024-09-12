@@ -12,6 +12,17 @@ object capy {
   method soltar(){
     game.addVisual(basuras.last())
     basuras.remove(basuras.last())
-
   }
+  method deciTuCantidadDeBasura(){
+    self.decirCantidadDe(basuras)
+  }
+  method deciCuantosSonReciclables(){
+    self.decirCantidadDe(self.basurasReciclables())
+  }
+  method basurasReciclables()= basuras.filter({basura => basura.esReciclable()})
+  
+  method decirCantidadDe(lista){
+    game.say(self,lista.size().toString())
+  }
+
 }
