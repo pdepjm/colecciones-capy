@@ -227,3 +227,58 @@
 {"level":"info","message":"⌛ Building environment","timeElapsed":134,"timestamp":"2025-09-18T03:25:10.780Z"}
 {"level":"info","message":"Removing diagnostics from /c:/Users/facundo.franco/Desktop/colecciones-capy/src/basura.wlk","timestamp":"2025-09-18T03:25:10.903Z"}
 {"level":"info","message":"⌛ Validating testExample.wtest","timeElapsed":122,"timestamp":"2025-09-18T03:25:11.036Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":119,"timestamp":"2025-09-18T10:40:34.818Z"}
+{"level":"info","message":"⌛ Validating src/bloques.wpgm","timeElapsed":170,"timestamp":"2025-09-18T10:40:35.017Z"}
+{"level":"info","message":"⌛ Validating src/bloques.wpgm","timeElapsed":108,"timestamp":"2025-09-18T10:40:39.881Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":312,"timestamp":"2025-09-18T10:51:33.497Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":449,"timestamp":"2025-09-18T10:51:33.954Z"}
+{"level":"info","message":"⌛ Validating src/capy.wlk","timeElapsed":523,"timestamp":"2025-09-18T10:51:34.486Z"}
+{"level":"info","message":"⌛ Validating src/capy.wlk","timeElapsed":402,"timestamp":"2025-09-18T10:51:34.888Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":250,"timestamp":"2025-09-18T10:51:40.241Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":384,"timestamp":"2025-09-18T10:51:40.627Z"}
+{"level":"info","message":"⌛ Validating src/combustibles.wlk","timeElapsed":446,"timestamp":"2025-09-18T10:51:41.075Z"}
+{"level":"info","message":"⌛ Validating src/combustibles.wlk","timeElapsed":360,"timestamp":"2025-09-18T10:51:41.436Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":265,"timestamp":"2025-09-18T10:51:46.407Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":242,"timestamp":"2025-09-18T10:51:46.652Z"}
+{"level":"info","message":"⌛ Validating src/utilidades.wlk","timeElapsed":428,"timestamp":"2025-09-18T10:51:47.081Z"}
+{"level":"info","message":"⌛ Validating src/utilidades.wlk","timeElapsed":399,"timestamp":"2025-09-18T10:51:47.482Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":317,"timestamp":"2025-09-18T10:51:57.708Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":260,"timestamp":"2025-09-18T10:51:57.972Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":473,"timestamp":"2025-09-18T10:51:58.446Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":595,"timestamp":"2025-09-18T10:51:59.048Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":296,"timestamp":"2025-09-18T10:52:03.893Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":296,"timestamp":"2025-09-18T10:52:04.193Z"}
+{"level":"info","message":"⌛ Validating src/planta.wlk","timeElapsed":524,"timestamp":"2025-09-18T10:52:04.720Z"}
+{"level":"info","message":"⌛ Validating src/planta.wlk","timeElapsed":514,"timestamp":"2025-09-18T10:52:05.237Z"}
+{"level":"info","message":"⌛ Validating src/juego.wpgm","timeElapsed":112,"timestamp":"2025-09-18T10:52:12.013Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":124,"timestamp":"2025-09-18T10:53:09.443Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":142,"timestamp":"2025-09-18T10:53:09.585Z"}
+{"level":"info","message":"Removing diagnostics from /c:/Users/facundo.franco/Desktop/colecciones-capy/src/utilidades.wlk","timestamp":"2025-09-18T10:53:09.697Z"}
+{"level":"info","message":"⌛ Validating src/utilidades.wlk","timeElapsed":113,"timestamp":"2025-09-18T10:54:50.587Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":147,"timestamp":"2025-09-18T10:54:57.308Z"}
+{"level":"info","message":"⌛ Validating src/utilidades.wlk","timeElapsed":159,"timestamp":"2025-09-18T10:54:57.470Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":145,"timestamp":"2025-09-18T10:56:07.890Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":186,"timestamp":"2025-09-18T10:56:08.076Z"}
+{"level":"info","message":"Removing diagnostics from /c:/Users/facundo.franco/Desktop/colecciones-capy/src/bloques.wpgm","timestamp":"2025-09-18T10:56:08.191Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":118,"timestamp":"2025-09-18T10:56:26.594Z"}
+{"level":"info","message":"⌛ Validating src/bloques.wpgm","timeElapsed":164,"timestamp":"2025-09-18T10:56:26.821Z"}
+{"errors":{"errors":[null,["/* el biogas es el resultado de la degradación\r"]]},"level":"error","message":"✘ Failed to get type description: Error: {\n  \"errors\": [\n    null,\n    [\n      \"/* el biogas es el resultado de la degradación\\r\"\n    ]\n  ]\n} {\n  \"errors\": [\n    null,\n    [\n      \"/* el biogas es el resultado de la degradación\\r\"\n    ]\n  ]\n}","stack":"Error: {\n  \"errors\": [\n    null,\n    [\n      \"/* el biogas es el resultado de la degradación\\r\"\n    ]\n  ]\n}\n    at aS (c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:64:34609)\n    at K1 (c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:64:34682)\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:64:37949\n    at o.g1 (c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:57:58803)\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:64:37918\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:57:56843\n    at Dfn (c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:68:11324)\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:68:3629\n    at Array.map (<anonymous>)\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:68:10583","timestamp":"2025-09-18T10:59:07.660Z"}
+{"errors":{"errors":[null,["/* el biogas es el resultado de la degradación\r"]]},"level":"error","message":"✘ Failed to get type description: Error: {\n  \"errors\": [\n    null,\n    [\n      \"/* el biogas es el resultado de la degradación\\r\"\n    ]\n  ]\n} {\n  \"errors\": [\n    null,\n    [\n      \"/* el biogas es el resultado de la degradación\\r\"\n    ]\n  ]\n}","stack":"Error: {\n  \"errors\": [\n    null,\n    [\n      \"/* el biogas es el resultado de la degradación\\r\"\n    ]\n  ]\n}\n    at aS (c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:64:34609)\n    at K1 (c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:64:34682)\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:64:37949\n    at o.g1 (c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:57:58803)\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:64:37918\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:57:56843\n    at Dfn (c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:68:11324)\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:68:3629\n    at Array.map (<anonymous>)\n    at c:\\Users\\facundo.franco\\.vscode\\extensions\\uqbar.wollok-lsp-ide-0.5.3\\out\\server\\src\\server.js:68:10583","timestamp":"2025-09-18T10:59:07.941Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":104,"timestamp":"2025-09-18T10:59:43.759Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":131,"timestamp":"2025-09-18T10:59:43.892Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":107,"timestamp":"2025-09-18T10:59:45.378Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":111,"timestamp":"2025-09-18T10:59:46.256Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":111,"timestamp":"2025-09-18T10:59:46.380Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":107,"timestamp":"2025-09-18T11:00:26.629Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":108,"timestamp":"2025-09-18T11:00:26.751Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":103,"timestamp":"2025-09-18T11:00:36.982Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":108,"timestamp":"2025-09-18T11:00:37.630Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":165,"timestamp":"2025-09-18T11:02:36.010Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":106,"timestamp":"2025-09-18T11:02:51.399Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":126,"timestamp":"2025-09-18T11:02:54.981Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":228,"timestamp":"2025-09-18T11:03:22.863Z"}
+{"level":"info","message":"⌛ Validating src/bloques.wpgm","timeElapsed":287,"timestamp":"2025-09-18T11:03:23.188Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":116,"timestamp":"2025-09-18T11:04:24.770Z"}
+{"level":"info","message":"⌛ Validating src/planta.wlk","timeElapsed":141,"timestamp":"2025-09-18T11:04:24.919Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":133,"timestamp":"2025-09-18T11:16:03.344Z"}
+{"level":"info","message":"⌛ Validating src/juego.wpgm","timeElapsed":141,"timestamp":"2025-09-18T11:16:03.486Z"}
