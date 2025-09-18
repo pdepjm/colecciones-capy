@@ -18,8 +18,7 @@ object lataDeCerveza {
   
   method colisionarCon(capy) {
     capy.recolectarBasura(self)
-    game.removeVisual(self)
-    game.say(capy, "Recolecté: lata de cerveza")
+
   }
 }
 
@@ -41,8 +40,6 @@ object botellaDeGaseosa {
   
   method colisionarCon(capy) {
     capy.recolectarBasura(self)
-    game.removeVisual(self)
-    game.say(capy, "Recolecté: botella de gaseosa")
   }
 }
 
@@ -67,7 +64,6 @@ object barrilDeCombustible {
   
   method colisionarCon(capy) {
     capy.recolectarBasura(self)
-    
     game.removeTickEvent("cambiarCombustible")
   }
 }

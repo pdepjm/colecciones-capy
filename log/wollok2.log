@@ -1170,3 +1170,16 @@
 {"level":"info","message":"⌛ Validating src/bloques.wpgm","timeElapsed":111,"timestamp":"2025-09-18T11:51:28.098Z"}
 {"level":"info","message":"Removing diagnostics from /c:/Users/facundo.franco/Desktop/colecciones-capy/src/bloques.wpgm","timestamp":"2025-09-18T11:51:45.332Z"}
 {"exitCode":"SIGINT","level":"info","message":"👾 Game executed src.juego.ejemplo on c:\\Users\\facundo.franco\\Desktop\\colecciones-capy","timeElapsed":191835,"timestamp":"2025-09-18T11:52:45.408Z"}
+{"level":"info","message":"⌛ Validating testExample.wtest","timeElapsed":117,"timestamp":"2025-09-18T11:54:51.768Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34msrc.juego.ejemplo\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\facundo.franco\\Desktop\\colecciones-capy\u001b[39m\u001b[23m","ok":true,"timeElapsed":232,"timestamp":"2025-09-18T11:55:26.438Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed src.juego.ejemplo on c:\\Users\\facundo.franco\\Desktop\\colecciones-capy","timeElapsed":2534840,"timestamp":"2025-09-18T12:37:41.046Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34msrc.juego.ejemplo\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\facundo.franco\\Desktop\\colecciones-capy\u001b[39m\u001b[23m","ok":true,"timeElapsed":272,"timestamp":"2025-09-18T12:37:43.015Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed src.juego.ejemplo on c:\\Users\\facundo.franco\\Desktop\\colecciones-capy","timeElapsed":105944,"timestamp":"2025-09-18T12:39:28.698Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34msrc.juego.ejemplo\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\facundo.franco\\Desktop\\colecciones-capy\u001b[39m\u001b[23m","ok":true,"timeElapsed":340,"timestamp":"2025-09-18T12:39:31.284Z"}
+{"exitCode":"SIGHUP","level":"info","message":"👾 Game executed src.juego.ejemplo on c:\\Users\\facundo.franco\\Desktop\\colecciones-capy","timeElapsed":478611,"timestamp":"2025-09-18T12:47:29.554Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34msrc.juego.ejemplo\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\facundo.franco\\Desktop\\colecciones-capy\u001b[39m\u001b[23m","ok":true,"timeElapsed":245,"timestamp":"2025-09-18T13:01:23.099Z"}
+{"level":"info","message":"⌛ Building environment","timeElapsed":204,"timestamp":"2025-09-18T13:11:54.835Z"}
+{"level":"info","message":"⌛ Validating src/basuras.wlk","timeElapsed":122,"timestamp":"2025-09-18T13:11:54.959Z"}
+{"exitCode":"SIGINT","level":"info","message":"👾 Game executed src.juego.ejemplo on c:\\Users\\facundo.franco\\Desktop\\colecciones-capy","timeElapsed":786105,"timestamp":"2025-09-18T13:14:28.954Z"}
+{"level":"info","message":"🚀 Program executed \u001b[3m\u001b[34msrc.juego.ejemplo\u001b[39m\u001b[23m on \u001b[3m\u001b[34mc:\\Users\\facundo.franco\\Desktop\\colecciones-capy\u001b[39m\u001b[23m","ok":true,"timeElapsed":359,"timestamp":"2025-09-18T13:14:38.303Z"}
+{"exitCode":"SIGINT","level":"info","message":"👾 Game executed src.juego.ejemplo on c:\\Users\\facundo.franco\\Desktop\\colecciones-capy","timeElapsed":1286190,"timestamp":"2025-09-18T13:36:04.140Z"}
