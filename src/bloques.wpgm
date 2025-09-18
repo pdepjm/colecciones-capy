@@ -2,13 +2,20 @@ import wollok.game.*
 
 object capy {
   var property position = game.origin()
-  var property basuraRecolectada = null
+  var impactoEnLaHuellaDeCarbonoTotal = 0 
+  method recolectarBasura(basura){
+    game.removeVisual(basura)
+    game.say(self, "Recolecté: barril de " + basura.nombre())
+    basura.impactoEnLaHuellaDeCarbono()
+  }
+  method tratar(){
+    impactoEnLaHuellaDeCarbonoTotal = (impactoEnLaHuellaDeCarbonoTotal - 20).max(0)
+  }
+  method impactoEnLaHuellaDeCarbono() = impactoEnLaHuellaDeCarbonoTotal
   
   method image() = "capy_tranqui.png"
   
-  method impactoEnLaHuellaDeCarbono() = basuraRecolectada.impactoEnLaHuellaDeCarbono()
   
-  method tratar(planta) = planta.tratar(basuraRecolectada)
 }
 
 object posicionAleatoria {
@@ -23,9 +30,10 @@ object lataDeCerveza {
   var property longitudCm = 10
   
   method impactoEnLaHuellaDeCarbono() = 5 * longitudCm
-  
-  method image() = "lata_roja.png"
-  
+  method nombre() = "lata_roja"
+  method image() = self.nombre() + ".png"
+
+
   method esReciclable() = true
   
   method tratar() {
@@ -44,9 +52,11 @@ object botellaDeGaseosa {
   var property position = posicionAleatoria.calcular()
   
   method impactoEnLaHuellaDeCarbono() = impactoEnHuellaDeCarbono
-  
-  method image() = "lata_naranja.png"
-  
+
+  method nombre() = "lata_naranja"
+
+  method image() = self.nombre() + ".png"  
+
   method esReciclable() = true
   
   method tratar() {
@@ -68,8 +78,8 @@ object barrilDeCombustible {
   method impactoEnLaHuellaDeCarbono() = combustibleActual.consumo()
   
   method esReciclable() = false
-
-  method image() = "barril_" + combustibleActual.sufijo() + ".png"
+  method nombre() =  "barril"
+  method image() = self.nombre() + "_" + combustibleActual.sufijo() + ".png"
 
   method cambiarCombustible() {
     const aux = combustibleActual
@@ -81,9 +91,7 @@ object barrilDeCombustible {
   
   method colisionarCon(capy) {
     capy.basuraRecolectada(self)
-    game.removeVisual(self)
     game.removeTickEvent("cambiarCombustible")
-    game.say(capy, "Recolecté: barril de " + combustibleActual.sufijo())
   }
 }
 
@@ -91,20 +99,14 @@ object plantaDeTratamiento {
   var property position = game.at(8, 8)
   
   method image() = "planta.png"
-  
-  method tratar(basura) {
-    basura.tratar()
-  }
+
   
   method colisionarCon(capy) {
-    if (capy.basuraRecolectada() != null) {
       capy.tratar(self)
       game.schedule(2000, { 
         game.say(capy, "Aprieta H para saber el impacto en la huella de carbono de la basura que recolectaste")
       })
-    } else {
-      game.say(capy, "No tengo basura para tratar")
-    }
+
   }
 }
 object petroleo {
@@ -154,7 +156,10 @@ program ejemplo {
     barrilDeCombustible.cambiarCombustible()
     game.say(capy, "El barril ahora tiene: " + barrilDeCombustible.combustibleActual().sufijo() )
   })
-  
+  // Agregar una basura que recorra la pantalla de lado a lado.
+  // Que pueda colisionar con capy y que sea recolecta por este.
+  // Agregar cosas nuevas 
+
   keyboard.h().onPressDo(
     {
       game.schedule(2000,{ 
