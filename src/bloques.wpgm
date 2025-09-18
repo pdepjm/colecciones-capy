@@ -31,6 +31,12 @@ object lataDeCerveza {
   method tratar() {
     longitudCm *= 0.9
   }
+  
+  method colisionarCon(capy) {
+    capy.basuraRecolectada(self)
+    game.removeVisual(self)
+    game.say(capy, "Recolecté: lata de cerveza")
+  }
 }
 
 object botellaDeGaseosa {
@@ -46,16 +52,39 @@ object botellaDeGaseosa {
   method tratar() {
     impactoEnHuellaDeCarbono -= 5
   }
+  
+  method colisionarCon(capy) {
+    capy.basuraRecolectada(self)
+    game.removeVisual(self)
+    game.say(capy, "Recolecté: botella de gaseosa")
+  }
 }
 
 object barrilDeCombustible {
   var property position = posicionAleatoria.calcular()
+  var combustibleActual = biogas
+  var combustibleAnterior = gasoil
   
-  method impactoEnLaHuellaDeCarbono() = biogas.consumo()
+  method impactoEnLaHuellaDeCarbono() = combustibleActual.consumo()
   
   method esReciclable() = false
+
+  method image() = "barril_" + combustibleActual.sufijo() + ".png"
+
+  method cambiarCombustible() {
+    const aux = combustibleActual
+    combustibleActual = combustibleAnterior
+    combustibleAnterior = aux
+  }
   
-  method image() = "residuos-toxicos.png"
+  method combustibleActual() = combustibleActual
+  
+  method colisionarCon(capy) {
+    capy.basuraRecolectada(self)
+    game.removeVisual(self)
+    game.removeTickEvent("cambiarCombustible")
+    game.say(capy, "Recolecté: barril de " + combustibleActual.sufijo())
+  }
 }
 
 object plantaDeTratamiento {
@@ -66,16 +95,30 @@ object plantaDeTratamiento {
   method tratar(basura) {
     basura.tratar()
   }
+  
+  method colisionarCon(capy) {
+    if (capy.basuraRecolectada() != null) {
+      capy.tratar(self)
+      game.schedule(2000, { 
+        game.say(capy, "Aprieta H para saber el impacto en la huella de carbono de la basura que recolectaste")
+      })
+    } else {
+      game.say(capy, "No tengo basura para tratar")
+    }
+  }
 }
-
 object petroleo {
   method consumo() = 1200
+  
+  method sufijo() = "petroleo"
 }
 
 object biogas {
   /* el biogas es el resultado de la degradación
   de materia degradable, así que en si es una forma de reciclar */
   method consumo() = 0
+  
+  method sufijo() = "biogas"
 }
 
 object gasoil {
@@ -86,7 +129,11 @@ object gasoil {
   }
   
   method consumo() = 500 * pureza
+  
+  method sufijo() = "gasoil"
 }
+
+
 
 program ejemplo {
   game.boardGround("humedal.png")
@@ -98,25 +145,16 @@ program ejemplo {
   game.addVisual(plantaDeTratamiento)
   game.addVisualCharacter(capy)
   
-  keyboard.r().onPressDo(
-    { 
-
-      const nuevaBasuraRecolectada = interactuador.obtenerPrimerElemento("r"," sobre un elemento para recolectarlo")
-      capy.basuraRecolectada(nuevaBasuraRecolectada)
-      game.removeVisual(nuevaBasuraRecolectada)
-    
-    }
-  )
-  keyboard.t().onPressDo(
-        { 
-        const planta = interactuador.obtenerPrimerElemento("t"," sobre un elemento para tratarlo")
-        capy.tratar(planta)
-        game.schedule(2000,{ 
-                  game.say(capy, "Aprieta P para saber el impacto en la huella de carbono de la basura que recolectaste")
-
-        })
-        }
-      )
+  game.onCollideDo(capy, { elemento =>
+    elemento.colisionarCon(capy)
+  })
+  
+  // Cambiar combustible cada 5 segundos
+  game.onTick(5000, "cambiarCombustible", {
+    barrilDeCombustible.cambiarCombustible()
+    game.say(capy, "El barril ahora tiene: " + barrilDeCombustible.combustibleActual().sufijo() )
+  })
+  
   keyboard.h().onPressDo(
     {
       game.schedule(2000,{ 
@@ -127,11 +165,3 @@ program ejemplo {
   )
   game.start()
 }
-  object interactuador{
-    method obtenerPrimerElemento(key,accion){
-      		const colliders = game.colliders(capy)
-		if (colliders.isEmpty()) 
-			throw new DomainException(message = "Apreta "+ key + accion, source = capy)
-    return colliders.head()
-    }
-  }
